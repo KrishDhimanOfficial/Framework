@@ -1,0 +1,391 @@
+$container-max-widths: (
+    sm: 540px,
+    md: 720px,
+    lg: 960px,
+    xl: 1140px,
+    xxl: 1320px
+);
+
+@each $container in $container-max-widths {
+    @media screen and (min-width:nth($container, 2)) {
+
+        .container {
+            max-width: nth($container, 2) - 60px;
+            margin-inline: auto;
+            padding-inline: 5px;
+        }
+    }
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@for $g from 1 through 5 {
+    .g-#{$g} {
+        gap: $g * 10 + px;
+    }
+}
+
+// function that divides cols
+@function col($col) {
+    $w: 100% / $col;
+    @return $w;
+}
+
+.col {
+    flex-basis: 100%;
+}
+
+.col-1 {
+    width: col(12);
+}
+
+.col-2 {
+    width: col(6);
+}
+
+.col-3 {
+    width: col(4);
+}
+
+.col-4 {
+    width: col(3);
+}
+
+.col-5 {
+    width: col(2.4);
+}
+
+.col-6 {
+    width: col(2);
+}
+
+.col-7 {
+    width: col(1.72);
+}
+
+.col-8 {
+    width: col(1.5);
+}
+
+.col-9 {
+    width: col(1.4);
+}
+
+.col-10 {
+    width: col(1.2);
+}
+
+.col-11 {
+    width: col(1.1);
+}
+
+.col-12 {
+    width: col(1);
+}
+
+// display : block class
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+// display : block class
+
+// display : Flex class
+.d-flex {
+    display: flex;
+    gap: 5px;
+}
+
+.flex-items-center {
+    justify-content: center;
+}
+
+.flex-items-start {
+    justify-content: start;
+}
+
+.flex-items-end {
+    justify-content: end;
+}
+
+.flex-items-between {
+    justify-content: space-between;
+}
+
+.flex-align-center {
+    align-items: center;
+}
+
+.flex-align-s {
+    align-items: start;
+}
+
+.flex-align-e {
+    align-items: end;
+}
+
+.align-content {
+    align-content: center;
+}
+
+.align-content-start {
+    align-content: start;
+}
+
+.align-content-end {
+    align-content: end;
+}
+
+.align-content-between {
+    align-content: space-between;
+}
+
+@for $gap from 1 through 5 {
+    .gap-#{$gap} {
+        gap: $gap * 10 + px;
+    }
+}
+
+// display : Flex class
+// display : grid class
+@for $grid from 1 through 6 {
+    .row-cols-#{$grid} {
+        display: grid;
+        grid-template-columns: repeat($grid, minmax(0, 1fr));
+
+    }
+}
+
+// display : grid class
+.border { 
+    border: 1px solid #000;
+}
+
+// padding class
+.p-0 {
+    padding: 0;
+}
+
+@for $padding from 1 through 5 {
+    .p-#{$padding} {
+        padding: $padding * 5 + px;
+    }
+}
+
+@for $padding from 1 through 5 {
+    .p-x-#{$padding} {
+        padding-inline: $padding * 6 + px;
+    }
+}
+
+@for $padding from 1 through 5 {
+    .p-y-#{$padding} {
+        padding-block: $padding * 6 + px;
+    }
+}
+
+// padding class
+// margin class
+.m-0 {
+    margin: 0;
+}
+
+.mx-auto {
+    margin-inline: auto;
+}
+
+@for $margin from 1 through 5 {
+    .m-#{$margin} {
+        margin: $margin * 5 + px;
+    }
+}
+
+@for $margin from 1 through 5 {
+    .m-x-#{$margin} {
+        margin-inline: $margin * 6 + px;
+    }
+}
+
+@for $margin from 1 through 5 {
+    .m-y-#{$margin} {
+        margin-block: $margin * 6 + px;
+    }
+}
+
+// margin class
+// text alignment class
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+// overflow class
+.overflow-hidden {
+    overflow: hidden;
+}
+
+// overflow class
+// image class
+.img-fit {
+    width: 100%;
+    height: auto;
+}
+
+.img-cover {
+    object-fit: cover;
+}
+
+.img-contain {
+    object-fit: contain;
+}
+
+// image class
+// media queries for Flex cols classes,Grid classes, and display : block
+@each $container in $container-max-widths {
+    @media screen and (min-width:nth($container, 2)) {
+
+        .col-#{nth($container, 1)}-1 {
+            flex: 0 0 auto;
+            width: col(12);
+        }
+
+        .col-#{nth($container, 1)}-2 {
+            flex: 0 0 auto;
+            width: col(6);
+        }
+
+        .col-#{nth($container, 1)}-3 {
+            flex: 0 0 auto;
+            width: col(4);
+        }
+
+        .col-#{nth($container, 1)}-4 {
+            flex: 0 0 auto;
+            width: col(3);
+        }
+
+        .col-#{nth($container, 1)}-5 {
+            flex: 0 0 auto;
+            width: col(2.4);
+        }
+
+        .col-#{nth($container, 1)}-6 {
+            flex: 0 0 auto;
+            width: col(2);
+        }
+
+        .col-#{nth($container, 1)}-7 {
+            flex: 0 0 auto;
+            width: col(1.72);
+        }
+
+        .col-#{nth($container, 1)}-8 {
+            flex: 0 0 auto;
+            width: col(1.5);
+        }
+
+        .col-#{nth($container, 1)}-9 {
+            flex: 0 0 auto;
+            width: col(1.4);
+        }
+
+        .col-#{nth($container, 1)}-10 {
+            flex: 0 0 auto;
+            width: col(1.2);
+        }
+
+        .col-#{nth($container, 1)}-11 {
+            flex: 0 0 auto;
+            width: col(1.1);
+        }
+
+        .col-#{nth($container, 1)}-12 {
+            flex: 0 0 auto;
+            width: col(1);
+        }
+
+        // media queries for gapping
+        @for $gap from 1 through 5 {
+            .gap-#{nth($container, 1)}-#{$gap} {
+                gap: $gap * 10 + px;
+            }
+        }
+
+        // media queries for row gapping
+        @for $g from 1 through 5 {
+            .g-#{nth($container, 1)}-#{$g} {
+                gap: $g * 10 + px;
+            }
+        }
+
+        @for $grid from 1 through 6 {
+            .row-cols-#{nth($container, 1)}-#{$grid} {
+                display: grid;
+                grid-template-columns: repeat($grid, minmax(0, 1fr));
+            }
+        }
+
+        // media queries for padding
+        @for $padding from 1 through 6 {
+            .p-#{nth($container, 1)}-#{$padding} {
+                padding: $padding * 5 + px;
+            }
+        }
+
+        @for $padding from 1 through 6 {
+            .p-x-#{nth($container, 1)}-#{$padding} {
+                padding-inline: $padding * 5 + px;
+            }
+        }
+
+        @for $padding from 1 through 6 {
+            .p-y-#{nth($container, 1)}-#{$padding} {
+                padding-block: $padding * 5 + px;
+            }
+        }
+
+        // media queries for margin
+        @for $margin from 1 through 6 {
+            .m-#{nth($container, 1)}-#{$margin} {
+                margin: $margin * 5 + px;
+            }
+        }
+
+        @for $margin from 1 through 6 {
+            .m-x-#{nth($container, 1)}-#{$margin} {
+                margin-inline: $margin * 5 + px;
+            }
+        }
+
+        @for $margin from 1 through 6 {
+            .m-y-#{nth($container, 1)}-#{$margin} {
+                margin-block: $margin * 5 + px;
+            }
+        }
+
+        // media queries for display : block
+        .d-#{nth($container, 1)}-block {
+            display: block;
+        }
+    }
+}
+
+// media queries for Flex cols classes,Grid classes, and display : block
