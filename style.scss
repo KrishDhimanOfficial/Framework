@@ -105,17 +105,20 @@ $container-max-widths: (
 
 .flex-items-center {
     justify-content: center;
+    align-items: center;
 }
-
-.flex-items-start {
+.justify-center{
+    justify-content: center;
+}
+.justify-start {
     justify-content: start;
 }
 
-.flex-items-end {
+.justify-end {
     justify-content: end;
 }
 
-.flex-items-between {
+.justify-between {
     justify-content: space-between;
 }
 
