@@ -1,6 +1,6 @@
 Sure, here's a simple README for a CSS framework focused on a grid system:
 
-# MyGridCSS
+# GridCSS
 
 MyGridCSS is a lightweight CSS framework that provides a simple and responsive grid system to help you create flexible and adaptive layouts easily.
 
